@@ -25,7 +25,7 @@ $splitFiles = Get-ChildItem "C:\temp\Pemex\SplitFiles"
 			$alertList = Get-Content $splitFiles[$counter].FullName #######  Paste in the location of a list of machines
 			$json = @{'comment' = 'Offboard'
 				  'status' = "Resolved"
-				  'assignedTo' = "jose.noel@pemex.com"
+				  'assignedTo' = "email@domain.com"
                                   'classification' = "FalsePositive"
                                   'determination' = "Malware"
                                   'comment' = "No Comment"
