@@ -19,6 +19,8 @@ $contentType = "application/json"
 $token=$gett.access_token
 $header = @{"Authorization"="Bearer $token"}
 
+$date = Get-Date -Format "MM-dd-yyyy"
+$logFile = "C:\temp\" + $date + "_log.txt"
 $splitFiles = Get-ChildItem "C:\Users\wkam\PycharmProjects\Pemex\split"
 	for($counter=0; $counter -lt $splitFiles.Count;$counter++)
 		{
@@ -34,6 +36,7 @@ $splitFiles = Get-ChildItem "C:\Users\wkam\PycharmProjects\Pemex\split"
 					{
     						$alert    
     						$answer = Invoke-RestMethod -Headers $header -Uri  https://api-us.securitycenter.windows.com/api/alerts/$alert -Method PATCH -Body $json -ContentType $contentType
+                            Add-Content -Path $logFile -Value $alert
 					}
 		Start-Sleep -Second 60
 		}
