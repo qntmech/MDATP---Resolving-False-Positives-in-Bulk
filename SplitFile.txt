@@ -20,18 +20,18 @@ if __name__ == '__main__':
     line_count = 0
     while sorting:
         count = 0
-        increment = (outer_count-1) * 300
+        increment = (outer_count-1) * 100
         left = len(hold_lines) - increment
-        file_name = "small_file_" + str(outer_count * 300) + ".txt"
+        file_name = "small_file_" + str(outer_count * 100) + ".txt"
         hold_new_lines = []
-        if left < 300:
+        if left < 100:
             while count < left:
                 hold_new_lines.append(hold_lines[line_count])
                 count += 1
                 line_count += 1
             sorting = False
         else:
-            while count < 300:
+            while count < 100:
                 hold_new_lines.append(hold_lines[line_count])
                 count += 1
                 line_count += 1
